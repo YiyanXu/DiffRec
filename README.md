@@ -4,9 +4,9 @@ This is the pytorch implementation of our paper
 
 ## Environment
 - Anaconda 3
-- python 3.8
+- python 3.8.10
 - pytorch 1.12.0
-- numpy 1.15.1
+- numpy 1.22.3
 
 ## Usage
 ### Data
