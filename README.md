@@ -10,6 +10,9 @@ This is the pytorch implementation of our paper
 
 ## Usage
 ### Data
-The experimental data are in './dataset' folder, including Amazon-Book, Yelp and MovieLens-1M.
+The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M.
+
+### Models
+The core codes of DiffRec are in './models' folder.
 
 
