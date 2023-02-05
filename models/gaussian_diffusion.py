@@ -11,7 +11,7 @@ class ModelMeanType(enum.Enum):
 
 class GaussianDiffusion(nn.Module):
     def __init__(self, mean_type, noise_schedule, noise_scale, noise_min, noise_max,\
-            steps, device, history_num_per_term=10, beta_fixed=False):
+            steps, device, history_num_per_term=10, beta_fixed=True):
 
         self.mean_type = mean_type
         self.noise_schedule = noise_schedule
