@@ -62,7 +62,7 @@ parser.add_argument('--n_cate', type=int, default=3, help='category num of items
 parser.add_argument('--in_dims', type=str, default='[300]', help='the dims for the encoder')
 parser.add_argument('--out_dims', type=str, default='[]', help='the hidden dims for the decoder')
 parser.add_argument('--act_func', type=str, default='tanh', help='activation function for autoencoder')
-parser.add_argument('--lamda', type=float, default=1e-4, help='hyper-parameter of multinomial log-likelihood for AE: 1e-5, 1e-4, 2e-4')
+parser.add_argument('--lamda', type=float, default=0.03, help='hyper-parameter of multinomial log-likelihood for AE: 0.01, 0.02, 0.03, 0.05')
 parser.add_argument('--optimizer1', type=str, default='AdamW', help='optimizer for AE: Adam, AdamW, SGD, Adagrad, Momentum')
 parser.add_argument('--anneal_cap', type=float, default=0.005)
 parser.add_argument('--anneal_steps', type=int, default=500)
