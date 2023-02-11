@@ -11,7 +11,6 @@ This is the pytorch implementation of our paper
 ## Usage
 ### Data
 The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M.
-Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits. Anyone who needs these files could contact us.
 
 ### Training
 #### DiffRec
