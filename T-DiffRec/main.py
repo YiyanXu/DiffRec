@@ -189,7 +189,7 @@ for epoch in range(1, args.epochs + 1):
                 os.makedirs(args.save_path)
             torch.save(model, '{}{}_lr{}_wd{}_bs{}_dims{}_emb{}_{}_steps{}_scale{}_min{}_max{}_sample{}_reweight{}_wmin{}_wmax{}_{}.pth' \
                 .format(args.save_path, args.dataset, args.lr, args.weight_decay, args.batch_size, args.dims, args.emb_size, args.mean_type, \
-                args.steps, args.noise_scale, args.noise_min, args.noise_max, args.sampling_steps, args.w_min, args.w_max, args.reweight, args.log_name))
+                args.steps, args.noise_scale, args.noise_min, args.noise_max, args.sampling_steps, args.reweight, args.w_min, args.w_max, args.log_name))
     
     print("Runing Epoch {:03d} ".format(epoch) + 'train loss {:.4f}'.format(total_loss) + " costs " + time.strftime(
                         "%H: %M: %S", time.gmtime(time.time()-start_time)))
