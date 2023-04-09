@@ -1,5 +1,5 @@
 # Diffusion Recommender Model
-This is the pytorch implementation of our paper
+This is the pytorch implementation of our paper at SIGIR 2023:
 > Diffusion Recommender Model
 
 ## Environment
@@ -57,8 +57,24 @@ cd ./L-DiffRec
 sh run.sh dataset lr1 lr2 wd1 wd2 batch_size n_cate in_dims out_dims lamda mlp_dims emb_size mean_type steps noise_scale noise_min noise_max sampling_steps reweight w_min w_max log_name round gpu_id
 ```
 
-### Example: Train DiffRec on Amazon-book under clean setting
+### Inference
+
+1. Download the checkpoints released by us from [Google drive]().
+2. Put the 'checkpoints' folder into the current folder.
+3. Run inference.py
+```
+python inference.py --dataset=$1 --gpu=$2
+```
+
+### Examples
+
+1. Train DiffRec on Amazon-book under clean setting
 ```
 cd ./DiffRec
 sh run.sh amazon-book_clean 5e-5 0 400 [1000] 10 x0 5 0.0001 0.0005 0.005 0 1 log 1 0
+```
+2. Inference L-DiffRec on Yelp under noisy setting
+```
+cd ./L-DiffRec
+python inference.py --dataset=yelp_noisy --gpu=0
 ```
