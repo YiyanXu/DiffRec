@@ -316,14 +316,14 @@ for epoch in range(1, args.epochs + 1):
 
             if not os.path.exists(save_path):
                 os.makedirs(save_path)
-            torch.save(model, '{}{}_{}lr1_{}lr2_{}wd1_{}wd2_bs{}_cate{}_in{}_out{}_lam{}_dims{}_emb{}_{}_steps{}_scale{}_min{}_max{}_sample{}_reweight{}_{}.pth' \
+            torch.save(model, '{}{}_{}lr1_{}lr2_{}wd1_{}wd2_bs{}_cate{}_in{}_out{}_lam{}_dims{}_emb{}_{}_steps{}_scale{}_min{}_max{}_sample{}_reweight{}_wmin{}_wmax{}_{}.pth' \
                 .format(save_path, args.dataset, args.lr1, args.lr2, args.wd1, args.wd2, args.batch_size, args.n_cate, \
                 args.in_dims, args.out_dims, args.lamda, args.mlp_dims, args.emb_size, args.mean_type, args.steps, \
-                args.noise_scale, args.noise_min, args.noise_max, args.sampling_steps, args.reweight, args.log_name))
-            torch.save(Autoencoder, '{}{}_{}lr1_{}lr2_{}wd1_{}wd2_bs{}_cate{}_in{}_out{}_lam{}_dims{}_emb{}_{}_steps{}_scale{}_min{}_max{}_sample{}_reweight{}_{}_AE.pth' \
+                args.noise_scale, args.noise_min, args.noise_max, args.sampling_steps, args.reweight, args.w_min, args.w_max, args.log_name))
+            torch.save(Autoencoder, '{}{}_{}lr1_{}lr2_{}wd1_{}wd2_bs{}_cate{}_in{}_out{}_lam{}_dims{}_emb{}_{}_steps{}_scale{}_min{}_max{}_sample{}_reweight{}_wmin{}_wmax{}_{}_AE.pth' \
                 .format(save_path, args.dataset, args.lr1, args.lr2, args.wd1, args.wd2, args.batch_size, args.n_cate, \
                 args.in_dims, args.out_dims, args.lamda, args.mlp_dims, args.emb_size, args.mean_type, args.steps, \
-                args.noise_scale, args.noise_min, args.noise_max, args.sampling_steps, args.reweight, args.log_name))
+                args.noise_scale, args.noise_min, args.noise_max, args.sampling_steps, args.reweight, args.w_min, args.w_max, args.log_name))
     
     print("Runing Epoch {:03d} ".format(epoch) + 'train loss {:.4f}'.format(total_loss) + " costs " + time.strftime(
                         "%H: %M: %S", time.gmtime(time.time()-start_time)))
