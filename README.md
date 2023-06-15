@@ -25,7 +25,7 @@ or use run.sh
 cd ./DiffRec
 sh run.sh dataset lr weight_decay batch_size dims emb_size mean_type steps noise_scale noise_min noise_max sampling_steps reweight log_name round gpu_id
 ```
-
+ 
 #### L-DiffRec
 ```
 cd ./L-DiffRec
