@@ -110,7 +110,7 @@ out_dims = eval(args.dims) + [n_item]
 in_dims = out_dims[::-1]
 model = DNN(in_dims, out_dims, args.emb_size, time_type="cat", norm=args.norm).to(device)
 
-optimizer = optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 print("models ready.")
 
 param_num = 0

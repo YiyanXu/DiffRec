@@ -1,9 +1,8 @@
 # Diffusion Recommender Model
-This is the pytorch implementation of our paper at SIGIR 2023:
+This is the pytorch implementation of the paper at SIGIR 2023:
 > [Diffusion Recommender Model](https://arxiv.org/abs/2304.04971)
 > 
 > Wenjie Wang, Yiyan Xu, Fuli Feng, Xinyu Lin, Xiangnan He, Tat-Seng Chua
-
 ## Environment
 - Anaconda 3
 - python 3.8.10
@@ -80,3 +79,4 @@ sh run.sh amazon-book_clean 5e-5 0 400 [1000] 10 x0 5 0.0001 0.0005 0.005 0 1 lo
 cd ./L-DiffRec
 python inference.py --dataset=yelp_noisy --gpu=0
 ```
+
