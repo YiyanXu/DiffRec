@@ -1,14 +1,16 @@
+import math
+
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch
-import numpy as np
-import math
-from torch.nn.init import xavier_normal_, constant_, xavier_uniform_
+from torch.nn.init import constant_, xavier_normal_
+
 
 class DNN(nn.Module):
     """
     A deep neural network for the reverse process of latent diffusion.
     """
+
     def __init__(self, in_dims, out_dims, emb_size, time_type="cat", norm=False, act_func='tanh', dropout=0.5):
         super(DNN, self).__init__()
         self.in_dims = in_dims
@@ -17,13 +19,15 @@ class DNN(nn.Module):
         self.time_emb_dim = emb_size
         self.time_type = time_type
         self.norm = norm
-        
+
         self.emb_layer = nn.Linear(self.time_emb_dim, self.time_emb_dim)
 
         if self.time_type == "cat":
-            in_dims_temp = [self.in_dims[0] + self.time_emb_dim] + self.in_dims[1:]
+            in_dims_temp = [self.in_dims[0] +
+                            self.time_emb_dim] + self.in_dims[1:]
         else:
-            raise ValueError("Unimplemented timestep embedding type %s" % self.time_type)
+            raise ValueError(
+                "Unimplemented timestep embedding type %s" % self.time_type)
         out_dims_temp = self.out_dims
 
         self.in_modules = []
@@ -60,9 +64,10 @@ class DNN(nn.Module):
         self.dropout = nn.Dropout(dropout)
 
         self.apply(xavier_normal_initialization)
-    
+
     def forward(self, x, timesteps):
-        time_emb = timestep_embedding(timesteps, self.time_emb_dim).to(x.device)
+        time_emb = timestep_embedding(
+            timesteps, self.time_emb_dim).to(x.device)
         emb = self.emb_layer(time_emb)
         if self.norm:
             x = F.normalize(x, dim=-1)
@@ -72,6 +77,7 @@ class DNN(nn.Module):
         h = self.out_layers(h)
 
         return h
+
 
 def timestep_embedding(timesteps, dim, max_period=10000):
     """
@@ -86,13 +92,16 @@ def timestep_embedding(timesteps, dim, max_period=10000):
 
     half = dim // 2
     freqs = torch.exp(
-        -math.log(max_period) * torch.arange(start=0, end=half, dtype=torch.float32) / half
+        -math.log(max_period) * torch.arange(start=0,
+                                             end=half, dtype=torch.float32) / half
     ).to(timesteps.device)
     args = timesteps[:, None].float() * freqs[None]
     embedding = torch.cat([torch.cos(args), torch.sin(args)], dim=-1)
     if dim % 2:
-        embedding = torch.cat([embedding, torch.zeros_like(embedding[:, :1])], dim=-1)
+        embedding = torch.cat(
+            [embedding, torch.zeros_like(embedding[:, :1])], dim=-1)
     return embedding
+
 
 def xavier_normal_initialization(module):
     r""" using `xavier_normal_`_ in PyTorch to initialize the parameters in
@@ -106,7 +115,4 @@ def xavier_normal_initialization(module):
     if isinstance(module, nn.Linear):
         xavier_normal_(module.weight.data)
         if module.bias is not None:
-            constant_(module.bias.data, 0)         
-
-
-
+            constant_(module.bias.data, 0)
