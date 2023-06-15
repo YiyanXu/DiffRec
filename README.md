@@ -69,7 +69,7 @@ python inference.py --dataset=$1 --gpu=$2
 ```
 
 ### Examples
- 
+
 1. Train DiffRec on Amazon-book under clean setting
 ```
 cd ./DiffRec
