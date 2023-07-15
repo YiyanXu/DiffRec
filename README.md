@@ -1,20 +1,24 @@
 # Diffusion Recommender Model
-This is the pytorch implementation of our paper at SIGIR 2023:
+
+This is the PyTorch implementation of our paper at SIGIR 2023:
 > [Diffusion Recommender Model](https://arxiv.org/abs/2304.04971)
 > 
 > Wenjie Wang, Yiyan Xu, Fuli Feng, Xinyu Lin, Xiangnan He, Tat-Seng Chua
 
 ## Environment
+
 - Anaconda 3
-- python 3.8.10
-- pytorch 1.12.0
-- numpy 1.22.3
+- Python 3.8.10
+- PyTorch 1.12.0
+- NumPy 1.22.3
 
 ## Usage
+
 ### Data
 The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M. Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits, which are available at [Google drive](https://drive.google.com/file/d/1PuUZsQrkHjqKh100qq0a2jZVgQDUxU2x/view?usp=share_link).
 
 ### Training
+
 #### DiffRec
 ```
 cd ./DiffRec
