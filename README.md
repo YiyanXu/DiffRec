@@ -14,8 +14,10 @@ This is the pytorch implementation of our paper at SIGIR 2023:
 ### Data
 The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M. Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits, which are available at [Google drive](https://drive.google.com/file/d/1PuUZsQrkHjqKh100qq0a2jZVgQDUxU2x/view?usp=share_link). Those item embeddings used in L-DiffRec are derived from a pre-trained LightGCN specific to each dataset.
 
+Note that the results on ML-1M differ from those reported in [CODIGEM](https://dl.acm.org/doi/10.1007/978-3-031-10989-8_47), owing to different data processing procedures. CODIGEM did not sort and split the training/testing sets according to timestamps; however, temporal splitting aligns better with the real-world testing.
+
 ### Training
-To reproduce the results and perform fine-tuning of the hyperparameters, please refer to the model name specified in the **inference.py** file. Ensure that the hyperparameter 'noise_min' is set to a value lower than 'noise_max' for accurate results.
+To reproduce the results and perform fine-tuning of the hyperparameters, please refer to the model name specified in the **inference.py** file. Ensure that the hyperparameter 'noise_min' is set to a value lower than 'noise_max'.
 #### DiffRec
 ```
 cd ./DiffRec
