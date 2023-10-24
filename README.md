@@ -84,3 +84,17 @@ cd ./L-DiffRec
 python inference.py --dataset=yelp_noisy --gpu=0
 ```
 
+## Citation  
+If you use our code, please kindly cite:
+
+```
+@inproceedings{wang2023diffrec,
+title = {Diffusion Recommender Model},
+author = {Wang, Wenjie and Xu, Yiyan and Feng, Fuli and Lin, Xinyu and He, Xiangnan and Chua, Tat-Seng},
+booktitle = {Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+pages = {832–841},
+publisher = {ACM},
+year = {2023}
+}
+
+```
