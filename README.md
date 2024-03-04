@@ -12,7 +12,7 @@ This is the pytorch implementation of our paper at SIGIR 2023:
 
 ## Usage
 ### Data
-The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M. Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits, which are available at [Google drive](https://drive.google.com/file/d/1PuUZsQrkHjqKh100qq0a2jZVgQDUxU2x/view?usp=share_link). Those item embeddings used in L-DiffRec are derived from a pre-trained LightGCN specific to each dataset.
+The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M. Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits, which are available at [OneDrive]([https://drive.google.com/file/d/1PuUZsQrkHjqKh100qq0a2jZVgQDUxU2x/view?usp=share_link](https://1drv.ms/u/c/1fffb8a5db4c9133/Ee3K4TLSFIVBkOdby-NUD3UBp7UnQxxh3rHvY6quE7X7KA?e=xgb0K3)). Those item embeddings used in L-DiffRec are derived from a pre-trained LightGCN specific to each dataset.
 
 Note that the results on ML-1M differ from those reported in [CODIGEM](https://dl.acm.org/doi/10.1007/978-3-031-10989-8_47), owing to different data processing procedures. CODIGEM did not sort and split the training/testing sets according to timestamps; however, temporal splitting aligns better with the real-world testing.
 
@@ -64,7 +64,7 @@ sh run.sh dataset lr1 lr2 wd1 wd2 batch_size n_cate in_dims out_dims lamda mlp_d
 
 ### Inference
 
-1. Download the checkpoints released by us from [Google drive](https://drive.google.com/file/d/1bPnjO-EzIygjuvloLCGpqfBVnkrdG4IH/view?usp=share_link).
+1. Download the checkpoints released by us from [OneDrive]([https://drive.google.com/file/d/1bPnjO-EzIygjuvloLCGpqfBVnkrdG4IH/view?usp=share_link](https://1drv.ms/u/c/1fffb8a5db4c9133/EaQQpSO6Yl9El2w9T_6Y62YBC-LcUhcynHAxMfoJm-mdZg?e=SeenBO)).
 2. Put the 'checkpoints' folder into the current folder.
 3. Run inference.py
 ```
