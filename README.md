@@ -12,7 +12,7 @@ This is the pytorch implementation of our paper at SIGIR 2023:
 
 ## Usage
 ### Data
-The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M. Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits, which are available at [OneDrive](https://1drv.ms/u/c/1fffb8a5db4c9133/Ee3K4TLSFIVBkOdby-NUD3UBp7UnQxxh3rHvY6quE7X7KA?e=xgb0K3). Those item embeddings used in L-DiffRec are derived from a pre-trained LightGCN specific to each dataset.
+The experimental data are in './datasets' folder, including Amazon-Book, Yelp and MovieLens-1M. Note that the item embedding files of Amazon-book for clean setting and noisy setting are not here due to filesize limits, which are available at [here](https://rec.ustc.edu.cn/share/b6c7dc70-39de-11ef-93a6-a7cb897fc286). Those item embeddings used in L-DiffRec are derived from a pre-trained LightGCN specific to each dataset.
 
 Note that the results on ML-1M differ from those reported in [CODIGEM](https://dl.acm.org/doi/10.1007/978-3-031-10989-8_47), owing to different data processing procedures. CODIGEM did not sort and split the training/testing sets according to timestamps; however, temporal splitting aligns better with the real-world testing.
 
@@ -64,7 +64,7 @@ sh run.sh dataset lr1 lr2 wd1 wd2 batch_size n_cate in_dims out_dims lamda mlp_d
 
 ### Inference
 
-1. Download the checkpoints released by us from [OneDrive](https://1drv.ms/u/c/1fffb8a5db4c9133/EaQQpSO6Yl9El2w9T_6Y62YBC-LcUhcynHAxMfoJm-mdZg?e=SeenBO).
+1. Download the checkpoints released by us from [here](https://rec.ustc.edu.cn/share/8eac9ff0-39de-11ef-96b7-5ff2a5909c69).
 2. Put the 'checkpoints' folder into the current folder.
 3. Run inference.py
 ```
